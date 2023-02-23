@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Second</title>
+	</head>
+	<body>
+		<img src="stand.jpg" id="display"></img>
+		<button onclick="iReplace()">SIT DOWN</button>
+		<button onclick="iRevert()">STAND UP</button>
+		<script>
+			function iReplace(){
+				document.getElementById("display").src = "sit.jpg";
+			}
+			function iRevert(){
+				document.getElementById("display").src = "stand.jpg";
+			}
+		</script>
+	</body>
+</html>
