@@ -59,7 +59,7 @@
 			}
 		</style>
 	</head>
-	<body onload="load()">
+	<body>
 		<h1> ROCK, PAPER, SCISSORS </h1>
 		<hr>
 		<!-- This is where the player selects his/her choice for the game. -->
@@ -94,10 +94,8 @@
 			var random;
 			var player;
 		
-			function load(){
-				var name = prompt("Enter your name: ");
-				document.getElementById("playerName").innerHTML = name;
-				}
+			var name = prompt("Enter your name: ");
+			document.getElementById("playerName").innerHTML = name;
 			
 			function rock(){
 				document.getElementById("playerChoice").src = "0.png";
