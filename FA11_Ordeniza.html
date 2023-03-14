@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> FA11 </title>
+	</head>
+	<body>
+		<script>
+		
+			var a = prompt("Enter Side 1: ");
+			var b = prompt("Enter Side 2: ");
+			var c = prompt("Enter Side 3: ");
+			determineTriangle(a, b, c);
+		
+			function determineTriangle(a, b, c){
+				if ((a==b)&&(b==c)){
+					alert("The triangle is EQUILATERAL");
+					}
+				else if ((a==b)||(a==c)||(b==c)){
+					alert("The triangle is ISOSCELES");
+					}
+				else {
+					alert("The triangle is SCALENE");
+					}
+				}
+		</script>
+	</body>
+</html>
