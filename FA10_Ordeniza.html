@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> FA10 </title>
+	</head>
+	<body>
+		<script>
+			
+			var x = Math.round(Math.random()*1000);
+			var y = x.toString();
+			document.write("Randomly generated number: " + x);
+				
+			if (y < 1000){
+				if (y >= 100){
+					var hund = y.charAt(0);
+					var tens = y.charAt(1);
+					var ones = y.charAt(2);
+					}
+				else if (y >= 10){
+					var hund = 0;
+					var tens = y.charAt(0);
+					var ones = y.charAt(1);
+					}
+				else {
+					var hund = 0;
+					var tens = 0;
+					var ones = y.charAt(0);
+					}
+				}
+			else {
+				var hund, tens, ones = 0;
+				}
+
+			document.write("<br>"+"Breakdown: " + hund*100 + ", " + tens*10 +", " + ones);			
+		</script>
+	</body>
+</html>
