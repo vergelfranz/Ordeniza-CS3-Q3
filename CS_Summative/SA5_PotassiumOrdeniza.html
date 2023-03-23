@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> My Online Shop</title>
+    <meta name="description" content="Summative Assessment 5">
+	<meta name="Author" content="Vergel Franz P. Ordeniza">
+	<style>
+      span {color: blue; text-decoration:underline}
+      button {width: 100px; padding: 5px; background: pink;}
+	</style>
+
+	</head>
+<body>
+	<h1> Welcome to Vergel's Coffee Shop </h1>
+	<h2> Please select from the following items </h2>
+	<!--- provide your own 3 items and their prices in the list --->
+	<ol>
+		<li> Classic Caramel Macchiato: P100.00 </li>
+		<li> Iced Chai Tea Latte: P250.00 </li>
+		<li> Cinnamon Mocha Espresso: P300.00 </li>
+	</ol>
+	<!-- the following will be used to display purchase information -->
+    <p> Item selected : <span id="item"> </span> </p>
+	<p> Qty bought : <span id="qty"> </span> </p>
+	<p> Amount to pay for the item: <span id="bill"> </span> </p>
+	<p> Current Total Bill: <span id="tbill"> </span> </p>
+	<button onclick="ask()"> Buy an Item </button>
+	<button onclick="iClear()"> Clear </button>
+    
+    <script>
+    	
+		/* The 'bill' shall be a global variable */
+		var bill = 0; 
+		
+		function ask(){ //This function is responsible for asking, computing, and printing for values
+			var item = prompt("Please input the corresponding number of your coffee choice"); 
+			var qty = prompt("How much of it would you like to order?");
+			var price;
+			var totPrice;
+			
+			/* determining the selected coffee */
+			switch(item){
+				case "1": 
+					document.getElementById("item").innerHTML = "Classic Caramel Macchiato"; // prints the selected coffee 
+					price = 100; // assigning variable for price
+					break;
+				case "2":
+					document.getElementById("item").innerHTML = "Iced Chai Tea Latte"; 
+					price = 250;
+					break;
+				case "3":
+					document.getElementById("item").innerHTML = "Cinnamon Mocha Espresso";
+					price = 300;
+					break;
+				default:
+					document.getElementById("item").innerHTML = "Not Available";
+					price = 0;
+					break;
+					}
+			
+			document.getElementById("qty").innerHTML = qty; // prints the number of quantity
+			
+			totPrice = price*qty;
+			document.getElementById("bill").innerHTML = totPrice; // computes and prints for the total price
+			
+			bill = bill + totPrice;
+			document.getElementById("tbill").innerHTML = bill; // computes and prints for the accumulated amount to pay 
+		}
+		
+		function iClear(){
+			bill = 0; // resets the value of bill
+			/* clearing the printed variables */
+			document.getElementById("item").innerHTML = "";
+			document.getElementById("qty").innerHTML = "";
+			document.getElementById("bill").innerHTML = "";
+			document.getElementById("tbill").innerHTML = "";
+			}
+		
+		
+    
+    </script>
+</body>
+
+</html>
+

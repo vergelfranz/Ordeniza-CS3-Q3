@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>One Time Password </title>
+		<meta name="description" content="Summative Assessment 6">
+		<meta name="Author" content="Vergel Franz P. Ordeniza">
+        <style>
+			body {background: lightblue; 
+           	text-align: center;
+           	font-family: arial;
+            color: navy;
+            }
+            button {padding: 10px; background:violet }
+            a {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+<body onload="generate()">
+	<h1> Final Verification Step </h1>
+	<h2> Current OTP: <span id="otp"> _ _ _ _ _ _ <span> </h2>
+	<h2><a href="" onclick="generate()"> New OTP </a></h2>
+    <button onclick="verify()"> Enter the OTP as shown above </button>
+    
+    <script>
+		
+    	function generate(){ // This function is responsible for generating random otp 
+			var otp = Math.floor(Math.random()*899999 + 100000); // generates a random guaranteed six numbered digit 
+			document.getElementById("otp").innerHTML = otp;
+		}
+		
+		function verify(){ // This function is responsible for asking the user to enter the otp and verifying it 
+			var x = prompt("Enter the OTP: "); 
+			var getOtp = document.getElementById("otp").innerHTML; // Getting the value of the random otp
+			/* verifying the otp entered by the user */
+			if (x == getOtp){
+				window.open("https://www.youtube.com/watch?v=_aDg0x5O5Ng"); // proceeds to another website if otp is correct
+				}
+			else {
+				alert("You entered an incorrect OTP");
+				generate(); // calls the generate() function
+				}
+			}
+		
+	
+    
+    </script>
+</body>
+</html>
+

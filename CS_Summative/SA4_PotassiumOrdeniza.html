@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Car Deprecation Calculator</title>
+		<meta name="description" content="Summative Assessment 4">
+		<meta name="Author" content="Vergel Franz P. Ordeniza">
+        <style>
+        	body {background: lightblue; 
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {color: maroon}
+        </style>
+
+	</head>
+<body>
+	<h1> Car Depreciation Calculator </h1>
+	<h2> Your Car Model: <span id="model"> </span></h2>
+    <h2> Car Cost: <span id="cost"> </span></h2>
+    <h2> Age of your Car: <span id="age"> </span></h2>
+    <h2> Good Condition?: <span id="condition"> </span></h2>
+    <h2> Your Car's Current Market Value <span id="currentvalue"> </span></h2>
+    
+    <button onclick="enterCar()"> Enter your Car information </button>
+    <script>
+    	function enterCar() { // This function is responsible for asking the user and printing the output 
+        	carmodel = prompt("Enter Car Model");
+            carcost = prompt("Enter Cost of the Car");
+            carage = prompt("How old is your car?");
+            good = confirm("In Good Condition? Ok for Yes / Cancel for No");
+            model.innerHTML = carmodel;
+            cost.innerHTML = carcost;
+            age.innerHTML = carage;
+            condition.innerHTML = (good) ? "Yes" : "No";      
+            computeMarketValue(parseFloat(cost),parseFloat(age),good); // 
+        }
+		function computeMarketValue(cost,age,good){ // This function is responsible for computing the market value 
+			if (carage > 10){
+				if (good){ // The if statement determines if the car model is in good condition
+					currentvalue.innerHTML = 70000;
+					}
+				else { // If the car model is not in good condition, it will print the 90% of the computed value, which is 10% less 
+					currentvalue.innerHTML = 70000*0.9;
+					}
+				}
+				
+			else if (carage >= 8){
+				if (good){
+					currentvalue.innerHTML = 100000;
+					}
+				else {
+					currentvalue.innerHTML = 100000*0.9;
+					}
+				}
+				
+			else if (carage >= 5){
+				if (good){
+					currentvalue.innerHTML = carcost*0.25;
+					}
+				else {
+					currentvalue.innerHTML = carcost*0.25*0.9;
+					}
+				}
+			else if (carage < 5){
+				if (good){
+					currentvalue.innerHTML = carcost*0.5;
+					}
+				else {
+					currentvalue.innerHTML = carcost*0.5*0.9;
+					}
+				}
+			}
+
+    </script>
+    
+</body>
+</html>
